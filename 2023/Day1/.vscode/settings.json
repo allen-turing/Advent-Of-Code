@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "istream": "cpp",
+        "iosfwd": "cpp",
+        "xlocale": "cpp",
+        "xstring": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xutility": "cpp"
+    }
+}
