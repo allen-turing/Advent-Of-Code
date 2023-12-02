@@ -6,7 +6,7 @@ int main(int argc, char const *argv[])
     int res = 0;
     fstream file;
 
-    string fileName = "in.txt";
+    string fileName = "in";
     file.open(fileName.c_str());
     while (file >> str)
     {

@@ -23,15 +23,13 @@ int main(int argc, char const *argv[])
     insertIntoSet(u);
 
     fstream file;
-    string fileName = "in.txt";
+    string fileName = "in";
     file.open(fileName.c_str());
 
     int lineNo = 1;
 
     while (file >> str)
     {
-        //cout << "String is " << str <<" ";
-        //cout << "Running For Line  " << lineNo++<<"\n";
         int length = str.size();
 
         string num = "";
@@ -40,19 +38,15 @@ int main(int argc, char const *argv[])
         {
             if (isdigit(str[index]))
             {
-                //cout << "Number Found " << str[index] << "\n";
                 num += str[index];
                 break;
             }
             for (int id = 1; id <= length; id++)
             {
                 string subs = str.substr(index, id);
-                //cout << "Subs is " << subs<<"\n";
                 if(u.count(subs))
                 {
                     num += u[subs];
-                    //cout << "Digit Number Found " << subs << "\n";
-
                     isfoundStart = 1;
                     break;
                 }
@@ -60,13 +54,10 @@ int main(int argc, char const *argv[])
             if(isfoundStart)
                 break;
         }
-        //cout << "***********************************************\n";
         for (int index = length-1; index > -1; index--)
         {
             if (isdigit(str[index]))
             {
-                //cout << "Number Found End " << str[index] << "\n";
-
                 num += str[index];
                 break;
             }
@@ -77,8 +68,6 @@ int main(int argc, char const *argv[])
                 if(u.count(subs))
                 {
                     num += u[subs];
-                    //cout << "Digit Number Found End " << subs << "\n";
-
                     isfoundEnd = 1;
                     break;
                 }
@@ -86,10 +75,8 @@ int main(int argc, char const *argv[])
             if(isfoundEnd)
                 break;
         }
-        //cout << "Combine Num = " << num << "\n";
         res += stoi(num);
-        //cout << "Res = " << res << "\n";
         str.clear();
     }
-    cout <<"Final Ans "<< res<<"\n";
+    cout<< res<<"\n";
 }
